@@ -3,11 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
 namespace csharpseleniumwithgit
 {
+    [TestFixture]
     public class Class1
     {
+        IWebDriver driver;
+        [SetUp]
+        public void init()
+        {
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https:\\www.google.com");
+            driver.Manage().Window.Maximize();
+        }
+        [Test]
+        public void SearchGoogle()
+        {
+            driver.FindElement(By.Name("q")).SendKeys("selenium testing");
+            System.Threading.Thread.Sleep(5000);
+        }
+
+        [TearDown]
+        public void cleanup()
+        {
+            driver.Close();
+            driver.Quit();
+        }
 
     }
 }
