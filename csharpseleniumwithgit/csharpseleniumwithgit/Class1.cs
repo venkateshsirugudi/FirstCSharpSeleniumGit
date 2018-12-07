@@ -29,6 +29,15 @@ namespace csharpseleniumwithgit
             Console.WriteLine("in Google search page");
         }
 
+        [Test]
+        public void SearchGoogleNewText()
+        {
+            driver.FindElement(By.Name("q")).SendKeys("Automation testing");
+            System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("in Google search page new text");
+        }
+
+
         [TearDown]
         public void cleanup()
         {
