@@ -8,5 +8,6 @@ namespace csharpseleniumwithgit
 {
     public class Class1
     {
+
     }
 }
