@@ -30,6 +30,7 @@ namespace csharpseleniumwithgit
         [TearDown]
         public void cleanup()
         {
+            Console.WriteLine("Closing driver instance");
             driver.Close();
             driver.Quit();
         }
