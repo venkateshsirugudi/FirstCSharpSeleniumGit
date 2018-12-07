@@ -19,12 +19,14 @@ namespace csharpseleniumwithgit
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https:\\www.google.com");
             driver.Manage().Window.Maximize();
+            Console.WriteLine("window maximized");
         }
         [Test]
         public void SearchGoogle()
         {
             driver.FindElement(By.Name("q")).SendKeys("selenium testing");
             System.Threading.Thread.Sleep(5000);
+            Console.WriteLine("in Google search page");
         }
 
         [TearDown]
